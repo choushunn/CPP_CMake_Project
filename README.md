@@ -8,6 +8,7 @@
 - 使用 `include/` + `src/` 目录分离头文件与源文件
 - 在 VSCode 中通过任务一键构建
 - 在 VSCode 中通过 GDB 一键调试
+- 强制接入 vcpkg（示例使用 `fmt`）
 
 ## 目录结构
 
@@ -37,6 +38,7 @@ test_vs/
 - VSCode
 - CMake（建议 3.16+）
 - GCC/G++ 与 GDB（如 MSYS2 UCRT64 工具链）
+- vcpkg（必需，用于第三方库管理）
 - VSCode 扩展：
   - C/C++（Microsoft）
   - CMake Tools（Microsoft）
@@ -101,16 +103,60 @@ chcp 65001
 
 如需长期生效，可在 PowerShell 配置中设置 UTF-8，或使用 VSCode 配置中的 `terminal.integrated.encoding = utf8`（本项目已配置）。
 
-## 快速开始
+### 5) 安装 vcpkg（必需）
 
-### 1) 命令行构建
-
-在项目根目录执行：
+推荐使用 Git 安装：
 
 ```powershell
-cmake -S . -B build
-cmake --build build
+git clone https://github.com/microsoft/vcpkg.git C:\Programs\vcpkg-2025.04.09
 ```
+
+首次初始化（PowerShell）：
+
+```powershell
+C:\Programs\vcpkg-2025.04.09\bootstrap-vcpkg.bat
+```
+
+设置环境变量（当前终端会话）：
+
+```powershell
+$env:VCPKG_ROOT = "C:\Programs\vcpkg-2025.04.09"
+$env:VCPKG_FORCE_DOWNLOADED_BINARIES = "1"
+```
+
+可验证：
+
+```powershell
+& "$env:VCPKG_ROOT\vcpkg.exe" version
+```
+
+## 快速开始
+
+### 1) 命令行构建（必须使用 vcpkg）
+
+项目根目录已提供：
+
+- `vcpkg.json`：vcpkg manifest（声明 `fmt` 依赖）
+- `CMakePresets.json`：提供 `vcpkg` 预设（强制走 vcpkg toolchain）
+- 预设中已固定 `VCPKG_TARGET_TRIPLET=x64-mingw-dynamic`，匹配 MSYS2 MinGW 编译器 ABI
+- 预设显式指定 `gcc/g++`，减少工具链探测失败概率
+
+执行：
+
+```powershell
+$env:VCPKG_ROOT = "C:\Programs\vcpkg-2025.04.09"
+$env:VCPKG_FORCE_DOWNLOADED_BINARIES = "1"
+cmake --preset vcpkg
+cmake --build --preset build
+```
+
+运行：
+
+```powershell
+.\build\demo.exe
+```
+
+若看到程序首行类似 `vcpkg fmt 已启用`，说明 vcpkg 依赖已生效。
 
 ### 2) 运行程序
 
@@ -139,6 +185,18 @@ cmake --build build
 - 通过编译选项统一源码与执行字符集为 UTF-8（Windows 下中文更稳定）
 - 添加头文件搜索路径
 - 收集 `src/` 中 `.cpp` 源文件并生成可执行文件 `demo`
+- 强制使用 `find_package(fmt CONFIG REQUIRED)` 并链接 `fmt::fmt`
+
+### `vcpkg.json`
+
+- 使用 manifest 模式声明第三方依赖（本示例为 `fmt`）
+- 配合 CMake toolchain 可在配置阶段自动安装/解析依赖
+
+### `CMakePresets.json`
+
+- `vcpkg`：设置 `CMAKE_TOOLCHAIN_FILE`，构建时必须依赖 vcpkg
+- `build`：对应 `vcpkg` 的构建流程
+- `VCPKG_TARGET_TRIPLET=x64-mingw-dynamic`：确保第三方库与 `g++.exe` 工具链一致
 
 ### `.vscode/*.json` 文件作用总览
 
@@ -166,7 +224,7 @@ cmake --build build
 
 ### `.vscode/settings.json`
 
-- `cmake.generator`：指定 CMake 生成器（如 `MinGW Makefiles`）
+- `cmake.generator`：指定 CMake 生成器（本示例使用 `MinGW Makefiles`）
 - `cmake.buildDirectory`：指定构建目录（示例为 `${workspaceFolder}/build`）
 - `cmake.configureOnOpen`：打开项目时是否自动执行 CMake 配置
 - `C_Cpp.default.compilerPath`：C/C++ 扩展默认编译器路径
@@ -223,9 +281,24 @@ cmake --build build
 
 ```powershell
 chcp 65001
-cmake -S . -B build
-cmake --build build
+$env:VCPKG_ROOT = "C:\Programs\vcpkg-2025.04.09"
+$env:VCPKG_FORCE_DOWNLOADED_BINARIES = "1"
+cmake --preset vcpkg
+cmake --build --preset build
 ```
+
+### 5) vcpkg 检测编译器失败（`detect_compiler` / `System is unknown to cmake`）
+
+若日志中出现 `buildtrees/detect_compiler` 失败，且包含 `System is unknown to cmake`，通常是 vcpkg 调用了系统 CMake（如 4.x）与 `x64-mingw-dynamic` 探测流程不兼容。建议在当前终端执行：
+
+```powershell
+$env:VCPKG_ROOT = "C:\Programs\vcpkg-2025.04.09"
+$env:VCPKG_FORCE_DOWNLOADED_BINARIES = "1"
+cmake --preset vcpkg
+cmake --build --preset build
+```
+
+本项目的 `.vscode/tasks.json` 与 `.vscode/settings.json` 已内置上述变量，通常可直接 `Ctrl+Shift+B`。
 
 ## 许可证
 

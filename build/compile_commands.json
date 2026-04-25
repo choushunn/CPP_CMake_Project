@@ -1,20 +1,20 @@
 [
 {
-  "directory": "G:/CPP/test_vs/build",
-  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\main.cpp.obj -c G:\\CPP\\test_vs\\src\\main.cpp",
-  "file": "G:/CPP/test_vs/src/main.cpp",
+  "directory": "G:/CPP/CPP_CMake_Project/build",
+  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\main.cpp.obj -c G:\\CPP\\CPP_CMake_Project\\src\\main.cpp",
+  "file": "G:/CPP/CPP_CMake_Project/src/main.cpp",
   "output": "CMakeFiles/demo.dir/src/main.cpp.obj"
 },
 {
-  "directory": "G:/CPP/test_vs/build",
-  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\math.cpp.obj -c G:\\CPP\\test_vs\\src\\math.cpp",
-  "file": "G:/CPP/test_vs/src/math.cpp",
+  "directory": "G:/CPP/CPP_CMake_Project/build",
+  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\math.cpp.obj -c G:\\CPP\\CPP_CMake_Project\\src\\math.cpp",
+  "file": "G:/CPP/CPP_CMake_Project/src/math.cpp",
   "output": "CMakeFiles/demo.dir/src/math.cpp.obj"
 },
 {
-  "directory": "G:/CPP/test_vs/build",
-  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\student.cpp.obj -c G:\\CPP\\test_vs\\src\\student.cpp",
-  "file": "G:/CPP/test_vs/src/student.cpp",
+  "directory": "G:/CPP/CPP_CMake_Project/build",
+  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\student.cpp.obj -c G:\\CPP\\CPP_CMake_Project\\src\\student.cpp",
+  "file": "G:/CPP/CPP_CMake_Project/src/student.cpp",
   "output": "CMakeFiles/demo.dir/src/student.cpp.obj"
 }
 ]

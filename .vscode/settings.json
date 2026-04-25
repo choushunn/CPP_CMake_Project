@@ -2,11 +2,16 @@
     "files.encoding": "utf8",
     "terminal.integrated.encoding": "utf8",
     "terminal.integrated.env.windows": {
-        "PATH": "C:/Programs/msys64/ucrt64/bin;${env:PATH}"
+        "PATH": "C:/Programs/msys64/ucrt64/bin;${env:PATH}",
+        "VCPKG_ROOT": "C:/Programs/vcpkg-2025.04.09",
+        "VCPKG_FORCE_DOWNLOADED_BINARIES": "1"
     },
     "cmake.generator": "MinGW Makefiles",
     "cmake.buildDirectory": "${workspaceFolder}/build",
     "cmake.configureOnOpen": true,
+    "cmake.useCMakePresets": "always",
+    "cmake.configurePreset": "vcpkg",
+    "cmake.buildPreset": "build",
     "C_Cpp.default.compilerPath": "C:/Programs/msys64/ucrt64/bin/g++.exe",
     "C_Cpp.default.intelliSenseMode": "gcc-x64"
 }

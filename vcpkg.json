@@ -1,0 +1,9 @@
+{
+  "name": "multi-file-demo",
+  "version-string": "0.1.0",
+  "description": "Beginner C++ + CMake + VSCode demo project with required vcpkg integration.",
+  "dependencies": [
+    "fmt",
+    "spdlog"
+  ]
+}

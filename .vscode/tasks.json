@@ -4,11 +4,13 @@
     {
       "label": "CMake: Configure",
       "type": "shell",
-      "command": "cmake -S . -B build",
+      "command": "cmake --preset vcpkg",
       "options": {
         "cwd": "${workspaceFolder}",
         "env": {
-          "PATH": "C:/Programs/msys64/ucrt64/bin;${env:PATH}"
+          "PATH": "C:/Programs/msys64/ucrt64/bin;${env:PATH}",
+          "VCPKG_ROOT": "C:/Programs/vcpkg-2025.04.09",
+          "VCPKG_FORCE_DOWNLOADED_BINARIES": "1"
         }
       },
       "group": "build",
@@ -17,11 +19,13 @@
     {
       "label": "CMake: Build",
       "type": "shell",
-      "command": "cmake --build build",
+      "command": "cmake --build --preset build",
       "options": {
         "cwd": "${workspaceFolder}",
         "env": {
-          "PATH": "C:/Programs/msys64/ucrt64/bin;${env:PATH}"
+          "PATH": "C:/Programs/msys64/ucrt64/bin;${env:PATH}",
+          "VCPKG_ROOT": "C:/Programs/vcpkg-2025.04.09",
+          "VCPKG_FORCE_DOWNLOADED_BINARIES": "1"
         }
       },
       "dependsOn": "CMake: Configure",

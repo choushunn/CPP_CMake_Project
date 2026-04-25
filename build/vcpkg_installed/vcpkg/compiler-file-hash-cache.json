@@ -1,0 +1,14 @@
+{
+  "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/cl.exe" : 
+  {
+    "hash" : "cd1642e6909957c890c4ea565c287bcb8e338d33",
+    "size" : 677968,
+    "timestamp" : 1774710775
+  },
+  "C:/Programs/msys64/ucrt64/bin/cc.exe" : 
+  {
+    "hash" : "4b2de1b17cb3e0e73216c6d96c3f3c271d3d80d8",
+    "size" : 3097123,
+    "timestamp" : 1754726043
+  }
+}

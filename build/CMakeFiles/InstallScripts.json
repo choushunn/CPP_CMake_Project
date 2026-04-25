@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"G:/CPP/test_vs/build/cmake_install.cmake"
+		"G:/CPP/CPP_CMake_Project/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

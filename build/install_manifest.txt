@@ -1,0 +1,8 @@
+G:/CPP/CPP_CMake_Project/install/bin/demo.exe
+G:/CPP/CPP_CMake_Project/install/bin/libfmtd.dll
+G:/CPP/CPP_CMake_Project/install/bin/libspdlogd.dll
+G:/CPP/CPP_CMake_Project/install/bin/libstdc++-6.dll
+G:/CPP/CPP_CMake_Project/install/bin/libgcc_s_seh-1.dll
+G:/CPP/CPP_CMake_Project/install/bin/libwinpthread-1.dll
+G:/CPP/CPP_CMake_Project/install/include/math.h
+G:/CPP/CPP_CMake_Project/install/include/student.h
