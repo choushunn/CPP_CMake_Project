@@ -1,0 +1,20 @@
+[
+{
+  "directory": "G:/CPP/test_vs/build",
+  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\main.cpp.obj -c G:\\CPP\\test_vs\\src\\main.cpp",
+  "file": "G:/CPP/test_vs/src/main.cpp",
+  "output": "CMakeFiles/demo.dir/src/main.cpp.obj"
+},
+{
+  "directory": "G:/CPP/test_vs/build",
+  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\math.cpp.obj -c G:\\CPP\\test_vs\\src\\math.cpp",
+  "file": "G:/CPP/test_vs/src/math.cpp",
+  "output": "CMakeFiles/demo.dir/src/math.cpp.obj"
+},
+{
+  "directory": "G:/CPP/test_vs/build",
+  "command": "C:\\Programs\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8 -o CMakeFiles\\demo.dir\\src\\student.cpp.obj -c G:\\CPP\\test_vs\\src\\student.cpp",
+  "file": "G:/CPP/test_vs/src/student.cpp",
+  "output": "CMakeFiles/demo.dir/src/student.cpp.obj"
+}
+]

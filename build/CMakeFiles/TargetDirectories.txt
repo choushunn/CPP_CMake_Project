@@ -1,0 +1,3 @@
+G:/CPP/test_vs/build/CMakeFiles/demo.dir
+G:/CPP/test_vs/build/CMakeFiles/edit_cache.dir
+G:/CPP/test_vs/build/CMakeFiles/rebuild_cache.dir
