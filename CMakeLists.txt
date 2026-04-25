@@ -74,8 +74,14 @@ install(TARGETS demo math student
 )
 
 if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.21")
+    # file(GET_RUNTIME_DEPENDENCIES) 在 MinGW 下通常需要显式给出编译器 bin 目录，
+    # 否则无法解析 libstdc++ / libgcc / libwinpthread。
+    get_filename_component(MINGW_BIN_DIR "${CMAKE_CXX_COMPILER}" DIRECTORY)
+
     install(TARGETS demo
         RUNTIME_DEPENDENCIES
+            DIRECTORIES
+                "${MINGW_BIN_DIR}"
             PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
             POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
     )
