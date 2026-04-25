@@ -6,5 +6,5 @@ CXX_DEFINES = -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_
 
 CXX_INCLUDES = @CMakeFiles/demo.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g -std=c++17 -finput-charset=UTF-8 -fexec-charset=UTF-8
+CXX_FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -finput-charset=UTF-8 -fexec-charset=UTF-8
 

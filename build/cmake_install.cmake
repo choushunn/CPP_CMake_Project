@@ -48,18 +48,41 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE FILE FILES
-    "G:/CPP/CPP_CMake_Project/build/vcpkg_installed/x64-mingw-dynamic/debug/bin/libfmtd.dll"
-    "G:/CPP/CPP_CMake_Project/build/vcpkg_installed/x64-mingw-dynamic/debug/bin/libspdlogd.dll"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "G:/CPP/CPP_CMake_Project/build/libmath.a")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "G:/CPP/CPP_CMake_Project/build/libstudent.a")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "G:/CPP/CPP_CMake_Project/build/demo.exe")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/demo.exe" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/demo.exe")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "C:/Programs/msys64/ucrt64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/demo.exe")
+    endif()
+  endif()
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(GET_RUNTIME_DEPENDENCIES
+    RESOLVED_DEPENDENCIES_VAR _CMAKE_DEPS
+    EXECUTABLES
+      "G:/CPP/CPP_CMake_Project/build/demo.exe"
+    PRE_EXCLUDE_REGEXES
+      "api-ms-"
+      "ext-ms-"
+    POST_EXCLUDE_REGEXES
+      ".*system32/.*\\.dll"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE FILE FILES
-    "C:/Programs/msys64/ucrt64/bin/libstdc++-6.dll"
-    "C:/Programs/msys64/ucrt64/bin/libgcc_s_seh-1.dll"
-    "C:/Programs/msys64/ucrt64/bin/libwinpthread-1.dll"
-    )
+  foreach(_CMAKE_TMP_dep IN LISTS _CMAKE_DEPS)
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES ${_CMAKE_TMP_dep}
+      FOLLOW_SYMLINK_CHAIN)
+  endforeach()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)

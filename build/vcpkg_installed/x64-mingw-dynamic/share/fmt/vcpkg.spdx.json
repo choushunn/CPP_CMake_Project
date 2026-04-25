@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/fmt-x64-mingw-dynamic-12.1.0-de800415-a464-4cc5-b910-8b8e829ef2d6",
-  "name": "fmt:x64-mingw-dynamic@12.1.0 db8e62908e45317e249fca6ef38cf7fc45c445aa079ef606965313161f82b3da",
+  "documentNamespace": "https://spdx.org/spdxdocs/fmt-x64-mingw-dynamic-12.1.0-a18936f9-967a-4a45-99ce-5e14be6295d3",
+  "name": "fmt:x64-mingw-dynamic@12.1.0 1437032c5207c8c12aabd8420b322dfa7727cf94a19c5e8c70ca8155f7c077bf",
   "creationInfo": {
     "creators": [
       "Tool: vcpkg-2025-04-07-b8b513ba8778c918cff49c3e837aae5999d5d2aa"
     ],
-    "created": "2026-04-25T09:59:04Z"
+    "created": "2026-04-25T09:59:46Z"
   },
   "relationships": [
     {
@@ -94,7 +94,7 @@
     {
       "name": "fmt:x64-mingw-dynamic",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "db8e62908e45317e249fca6ef38cf7fc45c445aa079ef606965313161f82b3da",
+      "versionInfo": "1437032c5207c8c12aabd8420b322dfa7727cf94a19c5e8c70ca8155f7c077bf",
       "downloadLocation": "NONE",
       "licenseConcluded": "MIT",
       "licenseDeclared": "NOASSERTION",

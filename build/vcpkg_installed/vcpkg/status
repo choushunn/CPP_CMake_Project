@@ -17,7 +17,7 @@ Version: 12.1.0
 Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
 Architecture: x64-mingw-dynamic
 Multi-Arch: same
-Abi: db8e62908e45317e249fca6ef38cf7fc45c445aa079ef606965313161f82b3da
+Abi: 1437032c5207c8c12aabd8420b322dfa7727cf94a19c5e8c70ca8155f7c077bf
 Description: {fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.
 Status: install ok installed
 
@@ -26,7 +26,7 @@ Version: 1.17.0
 Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
 Architecture: x64-mingw-dynamic
 Multi-Arch: same
-Abi: 267b2b59c3c6e3a88de744187f9787d3539f64972aa735729658751123d292f0
+Abi: 97c6ea922b98bbfa4a1980e9c63a267ec2f279b77958d4575fae4a6d8a9ba819
 Description: Very fast, header-only/compiled, C++ logging library.
 Default-Features: fmt, tz-offset
 Status: install ok installed

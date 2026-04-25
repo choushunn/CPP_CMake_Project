@@ -86,55 +86,23 @@ CMakeFiles/demo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/main.cpp.s"
 	C:\Programs\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\CPP\CPP_CMake_Project\src\main.cpp -o CMakeFiles\demo.dir\src\main.cpp.s
 
-CMakeFiles/demo.dir/src/math.cpp.obj: CMakeFiles/demo.dir/flags.make
-CMakeFiles/demo.dir/src/math.cpp.obj: CMakeFiles/demo.dir/includes_CXX.rsp
-CMakeFiles/demo.dir/src/math.cpp.obj: G:/CPP/CPP_CMake_Project/src/math.cpp
-CMakeFiles/demo.dir/src/math.cpp.obj: CMakeFiles/demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=G:\CPP\CPP_CMake_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/demo.dir/src/math.cpp.obj"
-	C:\Programs\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/demo.dir/src/math.cpp.obj -MF CMakeFiles\demo.dir\src\math.cpp.obj.d -o CMakeFiles\demo.dir\src\math.cpp.obj -c G:\CPP\CPP_CMake_Project\src\math.cpp
-
-CMakeFiles/demo.dir/src/math.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/math.cpp.i"
-	C:\Programs\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\CPP\CPP_CMake_Project\src\math.cpp > CMakeFiles\demo.dir\src\math.cpp.i
-
-CMakeFiles/demo.dir/src/math.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/math.cpp.s"
-	C:\Programs\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\CPP\CPP_CMake_Project\src\math.cpp -o CMakeFiles\demo.dir\src\math.cpp.s
-
-CMakeFiles/demo.dir/src/student.cpp.obj: CMakeFiles/demo.dir/flags.make
-CMakeFiles/demo.dir/src/student.cpp.obj: CMakeFiles/demo.dir/includes_CXX.rsp
-CMakeFiles/demo.dir/src/student.cpp.obj: G:/CPP/CPP_CMake_Project/src/student.cpp
-CMakeFiles/demo.dir/src/student.cpp.obj: CMakeFiles/demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=G:\CPP\CPP_CMake_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/demo.dir/src/student.cpp.obj"
-	C:\Programs\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/demo.dir/src/student.cpp.obj -MF CMakeFiles\demo.dir\src\student.cpp.obj.d -o CMakeFiles\demo.dir\src\student.cpp.obj -c G:\CPP\CPP_CMake_Project\src\student.cpp
-
-CMakeFiles/demo.dir/src/student.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/student.cpp.i"
-	C:\Programs\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\CPP\CPP_CMake_Project\src\student.cpp > CMakeFiles\demo.dir\src\student.cpp.i
-
-CMakeFiles/demo.dir/src/student.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/student.cpp.s"
-	C:\Programs\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\CPP\CPP_CMake_Project\src\student.cpp -o CMakeFiles\demo.dir\src\student.cpp.s
-
 # Object files for target demo
 demo_OBJECTS = \
-"CMakeFiles/demo.dir/src/main.cpp.obj" \
-"CMakeFiles/demo.dir/src/math.cpp.obj" \
-"CMakeFiles/demo.dir/src/student.cpp.obj"
+"CMakeFiles/demo.dir/src/main.cpp.obj"
 
 # External object files for target demo
 demo_EXTERNAL_OBJECTS =
 
 demo.exe: CMakeFiles/demo.dir/src/main.cpp.obj
-demo.exe: CMakeFiles/demo.dir/src/math.cpp.obj
-demo.exe: CMakeFiles/demo.dir/src/student.cpp.obj
 demo.exe: CMakeFiles/demo.dir/build.make
+demo.exe: libmath.a
+demo.exe: libstudent.a
 demo.exe: vcpkg_installed/x64-mingw-dynamic/debug/lib/libspdlogd.dll.a
 demo.exe: vcpkg_installed/x64-mingw-dynamic/debug/lib/libfmtd.dll.a
 demo.exe: CMakeFiles/demo.dir/linkLibs.rsp
 demo.exe: CMakeFiles/demo.dir/objects1.rsp
 demo.exe: CMakeFiles/demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=G:\CPP\CPP_CMake_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable demo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=G:\CPP\CPP_CMake_Project\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable demo.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\demo.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file C:/Programs/vcpkg-2025.04.09/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary G:/CPP/CPP_CMake_Project/build/demo.exe -installedDir G:/CPP/CPP_CMake_Project/build/vcpkg_installed/x64-mingw-dynamic/debug/bin -OutVariable out
 

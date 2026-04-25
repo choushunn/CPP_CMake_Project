@@ -3,21 +3,42 @@ Detecting compiler hash for triplet x64-windows...
 Compiler found: C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/cl.exe
 Detecting compiler hash for triplet x64-mingw-dynamic...
 -- Automatically setting %HTTP(S)_PROXY% environment variables to "127.0.0.1:7897".
-error: while detecting compiler information:
-The log file content at "C:\Programs\vcpkg-2025.04.09\buildtrees\detect_compiler\stdout-x64-mingw-dynamic.log" is:
--- Configuring x64-mingw-dynamic
-CMake Error at scripts/cmake/vcpkg_execute_required_process.cmake:127 (message):
-    Command failed: C:\\Programs\\vcpkg-2025.04.09\\downloads\\tools\\ninja-1.13.2-windows\\ninja.exe -v
-    Working Directory: C:/Programs/vcpkg-2025.04.09/buildtrees/detect_compiler/x64-mingw-dynamic-rel/vcpkg-parallel-configure
-    Error code: 1
-    See logs for more information:
-      C:\Programs\vcpkg-2025.04.09\buildtrees\detect_compiler\config-x64-mingw-dynamic-rel-CMakeCache.txt.log
-      C:\Programs\vcpkg-2025.04.09\buildtrees\detect_compiler\config-x64-mingw-dynamic-out.log
+Compiler found: C:/Programs/msys64/ucrt64/bin/cc.exe
+The following packages will be built and installed:
+    fmt:x64-mingw-dynamic@12.1.0
+    spdlog[core,fmt,tz-offset]:x64-mingw-dynamic@1.17.0
+  * vcpkg-cmake:x64-windows@2024-04-23
+  * vcpkg-cmake-config:x64-windows@2024-05-23
+Additional packages (*) will be modified to complete this operation.
+Restored 4 package(s) from C:\Users\SP\AppData\Local\vcpkg\archives in 100 ms. Use --debug to see more details.
+Installing 1/4 vcpkg-cmake-config:x64-windows@2024-05-23...
+Elapsed time to handle vcpkg-cmake-config:x64-windows: 5.32 ms
+vcpkg-cmake-config:x64-windows package ABI: 59f7631a62f075b3e3e2dd532d116ea0de2d72e2c17da04047694d1786ef3601
+Installing 2/4 vcpkg-cmake:x64-windows@2024-04-23...
+Elapsed time to handle vcpkg-cmake:x64-windows: 7.03 ms
+vcpkg-cmake:x64-windows package ABI: 9da5abae264dda1e758510929196761aa8535e3b8cb537b9ae3f8eeb029d3f4e
+Installing 3/4 fmt:x64-mingw-dynamic@12.1.0...
+Elapsed time to handle fmt:x64-mingw-dynamic: 22 ms
+fmt:x64-mingw-dynamic package ABI: 1437032c5207c8c12aabd8420b322dfa7727cf94a19c5e8c70ca8155f7c077bf
+Installing 4/4 spdlog[core,fmt,tz-offset]:x64-mingw-dynamic@1.17.0...
+Elapsed time to handle spdlog:x64-mingw-dynamic: 53.5 ms
+spdlog:x64-mingw-dynamic package ABI: 97c6ea922b98bbfa4a1980e9c63a267ec2f279b77958d4575fae4a6d8a9ba819
+Total install time: 89.9 ms
+The package fmt provides CMake targets:
 
-Call Stack (most recent call first):
-  scripts/cmake/vcpkg_configure_cmake.cmake:295 (vcpkg_execute_required_process)
-  scripts/detect_compiler/portfile.cmake:18 (vcpkg_configure_cmake)
-  scripts/ports.cmake:206 (include)
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt)
 
+    # Or use the header-only version
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt-header-only)
 
-error: vcpkg was unable to detect the active compiler's information. See above for the CMake failure output.
+The package spdlog provides CMake targets:
+
+    find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE spdlog::spdlog)
+
+    # Or use the header-only version
+    find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE spdlog::spdlog_header_only)
+

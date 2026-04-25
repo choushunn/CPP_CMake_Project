@@ -25,5 +25,14 @@
       "name": "build",
       "configurePreset": "vcpkg"
     }
+  ],
+  "testPresets": [
+    {
+      "name": "test",
+      "configurePreset": "vcpkg",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
   ]
 }
